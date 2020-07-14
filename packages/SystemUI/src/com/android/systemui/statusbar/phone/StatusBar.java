@@ -1487,6 +1487,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         // mKeyguardIndicationController
         mNotificationPanel.onThemeChanged();
         onThemeChanged();
+        updateDisplaySize(); // populates mDisplayMetrics
+        updateResources();
+        updateTheme();
     }
 
     @Override

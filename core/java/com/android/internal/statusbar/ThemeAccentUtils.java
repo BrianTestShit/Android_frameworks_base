@@ -24,6 +24,9 @@ import android.util.Log;
 public class ThemeAccentUtils {
 
     public static final String TAG = "ThemeAccentUtils";
+    public static final String[] STOCK = {
+            "com.android.theme.stock.system",
+    };
 
     // Accents
     private static final String[] ACCENTS = {
@@ -109,9 +112,20 @@ public class ThemeAccentUtils {
     };
 
     // Dark Variants
-    private static final String[] DARK_THEMES = {
+    public static final String[] DARK_THEMES = {
         "com.android.system.theme.charcoalblack", // 0
         "com.android.system.theme.amoledblack", // 1
+    };
+
+    // Dark Variants
+    public static final String[] PRIMARY_THEMES = {
+        "com.android.theme.color.primary.ocean", 
+        "com.android.theme.color.primary.nature", 
+        "com.android.theme.color.primary.gray", 
+        "com.android.theme.color.primary.flame", 
+        "com.android.theme.color.primary.charcoal", 
+        "com.android.theme.color.primary.omniblack",
+        "com.android.theme.color.primary.darkblue",
     };
 
     // Switch themes

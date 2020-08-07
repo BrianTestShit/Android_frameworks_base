@@ -3287,7 +3287,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
         final boolean canceled = event.isCanceled();
         final boolean fromSystem = (flags & KeyEvent.FLAG_FROM_SYSTEM) != 0;
-        final boolean longPress = (flags & KeyEvent.FLAG_LONG_PRESS) != 0;
         final boolean virtualKey = event.getDeviceId() == KeyCharacterMap.VIRTUAL_KEYBOARD;
         final boolean virtualHardKey = (flags & KeyEvent.FLAG_VIRTUAL_HARD_KEY) != 0;
         final boolean navBarKey = source == InputDevice.SOURCE_NAVIGATION_BAR;
@@ -3302,7 +3301,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
         final int displayId = event.getDisplayId();
         final boolean longPress = (flags & KeyEvent.FLAG_LONG_PRESS) != 0;
-        final boolean virtualKey = event.getDeviceId() == KeyCharacterMap.VIRTUAL_KEYBOARD;
 
         if (DEBUG_INPUT) {
             Log.d(TAG, "interceptKeyBeforeDispatching(): event = " + event.toString()
@@ -4534,7 +4532,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         final boolean homeKey = keyCode == KeyEvent.KEYCODE_HOME;
         final boolean menuKey = keyCode == KeyEvent.KEYCODE_MENU;
         final boolean backKey = keyCode == KeyEvent.KEYCODE_BACK;
-        final boolean virtualKey = event.getDeviceId() == KeyCharacterMap.VIRTUAL_KEYBOARD;
 
         // If screen is off then we treat the case where the keyguard is open but hidden
         // the same as if it were open and in front.

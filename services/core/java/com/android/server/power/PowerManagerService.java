@@ -265,8 +265,6 @@ public final class PowerManagerService extends SystemService
     private DreamManagerInternal mDreamManager;
     private Light mAttentionLight;
     private Light mButtonsLight;
-
-    private int mButtonTimeout;
     private int mButtonBrightness;
     private int mButtonBrightnessSettingDefault;
 
@@ -5222,7 +5220,6 @@ public final class PowerManagerService extends SystemService
                                                              mWakeLocks);
             }
         }
-    }
 
         /**
          * Used by the settings application and brightness control widgets to

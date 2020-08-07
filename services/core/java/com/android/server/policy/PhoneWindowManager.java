@@ -259,7 +259,11 @@ import com.android.server.wm.DisplayPolicy;
 import com.android.server.wm.DisplayRotation;
 import com.android.server.wm.WindowManagerInternal;
 import com.android.server.wm.WindowManagerInternal.AppTransitionListener;
+<<<<<<< HEAD
 import dalvik.system.PathClassLoader;
+=======
+
+>>>>>>> parent of ed99a8387be... Support for device specific key handlers
 import lineageos.providers.LineageSettings;
 
 import org.lineageos.internal.buttons.LineageButtons;
@@ -725,6 +729,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     private int mPowerButtonSuppressionDelayMillis = POWER_BUTTON_SUPPRESSION_DELAY_DEFAULT_MILLIS;
 
+<<<<<<< HEAD
 
     private int mVolButtonScreenshotType;
 
@@ -754,6 +759,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
 
     private int mScreenshotDelay;
     private int mTorchActionMode;
+=======
+>>>>>>> parent of ed99a8387be... Support for device specific key handlers
     private static final int MSG_DISPATCH_MEDIA_KEY_WITH_WAKE_LOCK = 3;
     private static final int MSG_DISPATCH_MEDIA_KEY_REPEAT_WITH_WAKE_LOCK = 4;
     private static final int MSG_KEYGUARD_DRAWN_COMPLETE = 5;
@@ -2404,6 +2411,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         mWindowManagerFuncs.onKeyguardShowingAndNotOccludedChanged();
                     }
                 });
+<<<<<<< HEAD
 
         String deviceKeyHandlerLib = mContext.getResources().getString(
                 com.android.internal.R.string.config_deviceKeyHandlerLib);
@@ -2426,6 +2434,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                         + deviceKeyHandlerLib, e);
             }
         }
+=======
+>>>>>>> parent of ed99a8387be... Support for device specific key handlers
     }
 
     /**
@@ -3825,15 +3835,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
 
         // Specific device key handling
-        if (mDeviceKeyHandler != null) {
-            try {
-                // The device only should consume known keys.
-                if (mDeviceKeyHandler.handleKeyEvent(event)) {
-                    return -1;
-                }
-            } catch (Exception e) {
-                Slog.w(TAG, "Could not dispatch event to device key handler", e);
-            }
+        if (dispatchKeyToKeyHandlers(event)) {
+            return -1;
         }
 
         if (down) {
@@ -3941,6 +3944,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         }
     }
 
+<<<<<<< HEAD
 
     private boolean unpinActivity(boolean checkOnly) {
         if (!hasNavigationBar()) {
@@ -3958,6 +3962,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
         return false;
     }
 
+=======
+>>>>>>> parent of ed99a8387be... Support for device specific key handlers
     // TODO(b/117479243): handle it in InputPolicy
     /** {@inheritDoc} */
     @Override
@@ -4694,6 +4700,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
 
+<<<<<<< HEAD
         // Specific device key handling
         if (mDeviceKeyHandler != null) {
             try {
@@ -4706,6 +4713,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
 
+=======
+>>>>>>> parent of ed99a8387be... Support for device specific key handlers
         // Handle special keys.
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK: {

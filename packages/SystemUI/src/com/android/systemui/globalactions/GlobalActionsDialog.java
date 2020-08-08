@@ -1101,7 +1101,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     }
 
     private Action getAssistAction() {
-        return new SinglePressAction(R.drawable.rr_mic_icon
+        return new SinglePressAction(R.drawable.rr_mic_icon,
                 R.string.global_action_assist) {
             @Override
             public void onPress() {

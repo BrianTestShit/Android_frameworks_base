@@ -123,4 +123,20 @@ public abstract class TunerService {
             return defaultValue;
         }
     }
+
+    public static long parseLong(String value, long defaultValue) {
+        try {
+            return value != null ? Long.parseLong(value) : defaultValue;
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public static float parseFloat(String value, float defaultValue) {
+        try {
+            return value != null ? Float.parseFloat(value) : defaultValue;
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
 }

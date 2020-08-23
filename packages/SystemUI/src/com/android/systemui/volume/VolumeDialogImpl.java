@@ -837,6 +837,7 @@ public class VolumeDialogImpl implements VolumeDialog,
         row.icon.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
     }
 
+
     public void initSettingsH() {
         if (mExpandRowsView != null) {
             mExpandRowsView.setVisibility(
@@ -873,15 +874,13 @@ public class VolumeDialogImpl implements VolumeDialog,
                     }
                     mCurrAnimator = circularReveal(mMediaOutputScrollView, x, endRadius);
                 }
-                mCurrAnimator = circularReveal(mMediaOutputScrollView, x, endRadius);
-            }
-            mCurrAnimator.start();
-            final ColorStateList tint = mShowingMediaDevices
-                 ? Utils.getColorAccent(mContext)
-                 : Utils.getColorAttr(mContext, android.R.attr.colorControlNormal);
-            mMediaButton.setImageTintList(tint);
+                mCurrAnimator.start();
+                final ColorStateList tint = mShowingMediaDevices
+                    ? Utils.getColorAccent(mContext)
+                    : Utils.getColorAttr(mContext, android.R.attr.colorControlNormal);
+                mMediaButton.setImageTintList(tint);
 
-            provideTouchHapticH(VibrationEffect.get(VibrationEffect.EFFECT_TICK));
+                provideTouchHapticH(VibrationEffect.get(VibrationEffect.EFFECT_TICK));
             });
             mExpandRows.setOnClickListener(v -> {
                 if (!mExpanded) {
@@ -909,12 +908,12 @@ public class VolumeDialogImpl implements VolumeDialog,
                         if (showMediaOutput) {
                             animateViewIn(mMediaButtonView, false, widthMedia, z / 2);
                             widthMedia += widthMedia;
-                         }
-                         animateViewIn(mODICaptionsView, false, widthMedia, z);
-                         if (mPendingOdiCaptionsTooltip && mODICaptionsView != null) {
-                             showCaptionsTooltip();
-                             mPendingOdiCaptionsTooltip = false;
-                         }
+                        }
+                        animateViewIn(mODICaptionsView, false, widthMedia, z);
+                        if (mPendingOdiCaptionsTooltip && mODICaptionsView != null) {
+                            showCaptionsTooltip();
+                            mPendingOdiCaptionsTooltip = false;
+                        }
                     }
 
                     boolean isNotificationEnabled = notification != null && !mState.linkedNotification;
